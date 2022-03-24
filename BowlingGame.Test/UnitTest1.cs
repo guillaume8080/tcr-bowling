@@ -30,5 +30,29 @@ namespace BowlingGame.Test
 
 
         }
+
+        public void plafonnerScore()
+        {
+            bool bonusPrecedentIsStrike = false;
+            bool bonusPrecedentIsSpare = false;
+
+            int nombreDEQuillesTombees = 10;
+            int scoreTourActuel = nombreDEQuillesTombees;
+
+            if (scoreTourActuel > 10)
+            {
+                Assert.Fail();
+            }
+
+            bonusPrecedentIsStrike = true;
+
+            if (nombreDEQuillesTombees * 2 > 20)
+            {
+                Assert.Fail();
+            }
+            
+                
+        } 
+        
     }
 }
