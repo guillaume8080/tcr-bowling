@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BowlingGame;
 
@@ -8,54 +7,37 @@ namespace BowlingGame.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void getLeScoreMax()
+        public void getStrike()
         {
-            // calculer scoremax avec extraball
-            int scoreMaxPossible = 300;
-            int score = 0;
-            
-            int nombreOfFramePasse = 10;
-            nombreOfFramePasse = nombreOfFramePasse;
-            
-            for (int i = 0; i < nombreOfFramePasse; i++)
-            {
-                score = score + 10;
-                score = score + 20;
-            }
+            Partie partie = new Partie();
+            int score = partie.score;
 
-            if (score > scoreMaxPossible)
-            {
-                Assert.Fail();
-            }
-            
 
+            if (partie.isStrike())
+            {
+                if (score != 10)
+                {
+                    Assert.Fail();
+                }
+            }
 
         }
 
-        public void plafonnerScore()
+        [TestMethod]
+        public void checkNombreDeLancer()
         {
-            bool bonusPrecedentIsStrike = false;
-            bool bonusPrecedentIsSpare = false;
-
-            int nombreDEQuillesTombees = 10;
-            int scoreTourActuel = nombreDEQuillesTombees;
-
-            if (scoreTourActuel > 10)
-            {
-                Assert.Fail();
-            }
-
-            bonusPrecedentIsStrike = true;
-
-            if (nombreDEQuillesTombees * 2 > 20)
-            {
-                Assert.Fail();
-            }
+            Partie partie = new Partie();
             
-                
-        }
-        
-        
+            if (partie.nbDeLance > 2 )
+            {
+                Assert.Fail();
+            }
 
+            
+            
+
+        }
     }
 }
+    
+
