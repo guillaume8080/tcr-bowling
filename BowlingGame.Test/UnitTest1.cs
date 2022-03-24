@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BowlingGame;
 
 namespace BowlingGame.Test
 {
@@ -7,28 +7,21 @@ namespace BowlingGame.Test
     public class UnitTest1
     {
         [TestMethod]
-        public void getLeScoreMax()
+        public void getStrike()
         {
-            // calculer scoremax avec extraball
-            int scoreMaxPossible = 300;
-            int score = 0;
-            
-            int nombreOfFramePasse = 10;
-            nombreOfFramePasse = nombreOfFramePasse;
-            
-            for (int i = 0; i < nombreOfFramePasse; i++)
-            {
-                score = score + 10;
-                score = score + 20;
-            }
+            Partie partie = new Partie();
+            int score = partie.score;
 
-            if (score > scoreMaxPossible)
+        
+            if(partie.isStrike())
             {
-                Assert.Fail();
+                if (score != 10)
+                {
+                    Assert.Fail();
+                }
             }
-            
-
 
         }
+
     }
 }
